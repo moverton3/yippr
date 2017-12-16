@@ -1,6 +1,16 @@
 import React, { Component } from 'react';
-import { Form, Button, Label, List } from 'semantic-ui-react'
+import { Form,
+         Button,
+         Label,
+         List,
+         Container,
+         Header,
+         Icon,
+         Segment,
+       } from 'semantic-ui-react'
 import axios from 'axios'
+
+const square = { width: 175, height: 175 }
 
 class Barks extends Component{
   state = { barks: [], newBark: "" }
@@ -38,19 +48,27 @@ class Barks extends Component{
 
   render(){
     return(
+    <Container>
       <div>
+        <br />
         <Form onSubmit={this.handleSubmit}>
-          <Label>
-            New Bark
+          <Label color="violet">
+              <Header as="h1" color="white">
+                <Icon name='paw' />
+                New Bark
+              </Header>
           </Label>
+          <Segment>
           <Form.Input placeholder="Whats going on?" onChange={this.handleChange} />
           <Button secondary>Bark!</Button>
+        </Segment>
         </Form>
         <h1>Barks Go Here</h1>
         <ul>
           {this.displayBarks()}
         </ul>
       </div>
+    </Container>
     )
   }
 }
