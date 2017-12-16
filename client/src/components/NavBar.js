@@ -7,6 +7,7 @@ import { handleLogout } from '../actions/auth';
 const styles={
   logout: {
     color :'#E08700',
+
   }
 }
 
