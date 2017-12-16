@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Button } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 
@@ -19,6 +21,9 @@ class Bio extends Component {
       <div>
         <img src={this.state.image} height="300px" width="400px" alt=""/>
         {this.state.description}
+        <Button>
+        <Link to={'/barks'}>View All Barks</Link>
+        </Button>
       </div>
     )
   }

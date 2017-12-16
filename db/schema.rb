@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171216164911) do
+ActiveRecord::Schema.define(version: 20171216210317) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "barks", force: :cascade do |t|
+    t.string "content"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_barks_on_user_id"
+  end
 
   create_table "bios", force: :cascade do |t|
     t.string "profile_image"
@@ -53,5 +61,6 @@ ActiveRecord::Schema.define(version: 20171216164911) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
+  add_foreign_key "barks", "users"
   add_foreign_key "bios", "users"
 end
