@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  has_one :bio 
+  has_one :bio
+  has_many :barks
   devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :trackable, :validatable,
           :omniauthable

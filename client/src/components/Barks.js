@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Button, Label, List } from 'semantic-ui-react'
+import axios from 'axios'
 
 class Barks extends Component{
   state = { barks: [], newBark: "" }
@@ -11,15 +12,25 @@ class Barks extends Component{
 
   handleSubmit = (e) => {
     e.preventDefault()
-    this.setState({ barks: [...this.state.barks, this.state.newBark]})
-    e.target.value = ""
+    axios.post('/api/barks', { content: this.state.newBark})
+    .then(res => {
+      this.setState({ barks: [...this.state.barks, res.data.content]})
+    })
+  }
+
+  deleteItem = () => {
+    console.log('delete')
   }
 
   displayBarks = () => {
     return this.state.barks.map( bark => {
       return(
         <List.Item>
-          {bark}
+          {bark} <br />
+          <Button onClick={this.deleteItem}>
+            Delete
+          </Button>
+
         </List.Item>
       )
     })
