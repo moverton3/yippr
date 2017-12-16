@@ -54,11 +54,9 @@ class Barks extends Component{
       <div>
         <br />
         <Form onSubmit={this.handleSubmit}>
-          <Label circular color="teal">
+          <Label color='teal'>
               <h1>
-                <Icon name='paw' />
-                New Bark
-                <Icon name='paw' />
+                <div><Icon name='paw' />New Bark<Icon name='paw' /></div>
               </h1>
           </Label>
           <Segment inverted color='violet' secondary>
