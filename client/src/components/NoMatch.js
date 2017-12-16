@@ -19,7 +19,7 @@ class NoMatch extends Component {
               <Header as='h1' textAlign='center'>
               You can't find dogs here. Go back home!
                 <br />
-              <Button>
+              <Button >
                 <Link to='/'> Home</Link>
               </Button>
               </Header>
