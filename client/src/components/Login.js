@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { Header, Segment, Form, Button } from 'semantic-ui-react';
+import { Header, Segment, Form, Button, Icon } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { handleLogin } from '../actions/auth';
 
 const styles ={
   topLogo: {
     color :'purple',
-    
-
+    size: '60px',
+    textAlign:'center'
   }
 }
 
@@ -31,12 +31,11 @@ class Login extends Component {
   render() {
     const { email, password } = this.state;
     return (
-<<<<<<< HEAD
-
-=======
       <div>
-      <h1 style={styles.topLogo}>Yipper</h1>
->>>>>>> Add changes to login.
+        <div>
+
+          <h1 style={styles.topLogo}><span><Icon name='paw' size='big'/></span>Yippr</h1>
+        </div>
       <Segment inverted color='teal'>
 
         <Header as='h1' textAlign='center'>Login</Header>
@@ -67,11 +66,9 @@ class Login extends Component {
           </Segment>
         </Form>
       </Segment>
-<<<<<<< HEAD
 
-=======
     </div>
->>>>>>> Add changes to login.
+
     );
   }
 }
