@@ -12,6 +12,7 @@ class Barks extends Component{
   handleSubmit = (e) => {
     e.preventDefault()
     this.setState({ barks: [...this.state.barks, this.state.newBark]})
+    e.target.value = ""
   }
 
   displayBarks = () => {
