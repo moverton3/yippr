@@ -28,11 +28,11 @@ class Register extends Component {
     const { email, password, passwordConfirmation } = this.state;
 
     return (
-      <Segment basic>
+      <Segment basic inverted color='teal'>
         <Header as='h1' textAlign='center'>Register Component</Header>
         <Form onSubmit={this.handleSubmit}>
           <Form.Field>
-            <label htmlFor='email'>Email</label>
+            <label className='text-white' htmlFor='email'>Email</label>
             <input
               id='email'
               placeholder='Email'
@@ -42,7 +42,7 @@ class Register extends Component {
             />
           </Form.Field>
           <Form.Field>
-            <label htmlFor='password'>Password</label>
+            <label className='text-white' htmlFor='password'>Password</label>
             <input
               id='password'
               placeholder='Password'
@@ -53,7 +53,7 @@ class Register extends Component {
             />
           </Form.Field>
           <Form.Field>
-            <label htmlFor='passwordConfirmation'>Password Confirmation</label>
+            <label className='text-white' htmlFor='passwordConfirmation'>Password Confirmation</label>
             <input
               id='passwordConfirmation'
               placeholder='Password Confirmation'
@@ -64,7 +64,7 @@ class Register extends Component {
             />
           </Form.Field>
           <Segment basic textAlign='center'>
-            <Button type='submit'>Submit</Button>
+            <Button basic color='violet' type='submit'>Submit</Button>
           </Segment>
         </Form>
       </Segment>
