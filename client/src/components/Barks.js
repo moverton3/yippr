@@ -10,7 +10,6 @@ import { Form,
        } from 'semantic-ui-react'
 import axios from 'axios'
 
-const square = { width: 175, height: 175 }
 
 class Barks extends Component{
   state = { barks: [], newBark: "" }
@@ -35,13 +34,16 @@ class Barks extends Component{
   displayBarks = () => {
     return this.state.barks.map( bark => {
       return(
+        <List bulleted>
         <List.Item>
-          {bark} <br />
-          <Button onClick={this.deleteItem}>
+          <h3>{bark}</h3>
+          <Button size='mini' inverted color='red' onClick={this.deleteItem}>
+            <Icon link name='delete' />
             Delete
           </Button>
-
+        <br />
         </List.Item>
+      </List>
       )
     })
   }
@@ -52,18 +54,19 @@ class Barks extends Component{
       <div>
         <br />
         <Form onSubmit={this.handleSubmit}>
-          <Label color="violet">
-              <Header as="h1" color="white">
+          <Label circular color="teal">
+              <h1>
                 <Icon name='paw' />
                 New Bark
-              </Header>
+                <Icon name='paw' />
+              </h1>
           </Label>
-          <Segment>
+          <Segment inverted color='violet' secondary>
           <Form.Input placeholder="Whats going on?" onChange={this.handleChange} />
-          <Button secondary>Bark!</Button>
+          <Button inverted>Bark!</Button>
         </Segment>
         </Form>
-        <h1>Barks Go Here</h1>
+        <h1>Recent Barks</h1>
         <ul>
           {this.displayBarks()}
         </ul>
