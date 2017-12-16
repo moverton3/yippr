@@ -35,6 +35,7 @@ class Login extends Component {
         <div>
 
           <h1 style={styles.topLogo}><span><Icon name='paw' size='big'/></span>Yippr</h1>
+          <h2 style={styles.topLogo}>World's first dog social media site</h2>
         </div>
       <Segment inverted color='teal'>
 
