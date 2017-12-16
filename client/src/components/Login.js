@@ -21,7 +21,7 @@ class Login extends Component {
   render() {
     const { email, password } = this.state;
     return (
-      <Segment inverted color='brown'>
+      <Segment inverted color='teal'>
         <Header as='h1' textAlign='center'>Login</Header>
         <Form onSubmit={this.handleSubmit}>
           <Form.Field>
@@ -46,7 +46,7 @@ class Login extends Component {
             />
           </Form.Field>
           <Segment textAlign='center' basic>
-            <Button primary type='submit'>Submit</Button>
+            <Button basic color="violet" type='submit'>Submit</Button>
           </Segment>
         </Form>
       </Segment>
