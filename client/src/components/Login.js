@@ -21,12 +21,13 @@ class Login extends Component {
   render() {
     const { email, password } = this.state;
     return (
+
       <Segment inverted color='teal'>
-        
+
         <Header as='h1' textAlign='center'>Login</Header>
         <Form onSubmit={this.handleSubmit}>
           <Form.Field>
-            <label htmlFor='email'>Email</label>
+            <label className="text-white" htmlFor='email'>Email</label>
             <input
               required
               id='email'
@@ -36,7 +37,7 @@ class Login extends Component {
             />
           </Form.Field>
           <Form.Field>
-            <label htmlFor='password'>Password</label>
+            <label className="text-white" htmlFor='password'>Password</label>
             <input
               required
               id='password'
@@ -51,6 +52,7 @@ class Login extends Component {
           </Segment>
         </Form>
       </Segment>
+
     );
   }
 }

@@ -28,16 +28,16 @@ class Home extends Component {
   render() {
     return (
 
-      <Segment>
+      <Segment inverted color='violet'>
         <Header as='h1'>Create Your Bio</Header>
         <Form onSubmit={this.handleSubmit}>
-          <Label>Profile Image</Label>
+          <Label circular color='teal'>Profile Image</Label>
           <Form.Input placeholder="URL goes here" id="profile_image" onChange={this.handleImgChange} />
-          <Label>Description</Label>
+          <Label circular color='teal'>Description</Label>
           <TextArea placeholder="Description Goes Here" id="description" onChange={this.handleDescChange} />
-          <Button secondary type='submit'>Add Bio</Button>
+          <Button inverted type='submit'>Add Bio</Button>
           <Link to={'/bio'}>
-          <Button secondary>Go To Page</Button>
+          <Button inverted>Go To Page</Button>
           </Link>
         </Form>
 
