@@ -1,4 +1,8 @@
 class Api::BiosController < ApplicationController
+  def index
+    render json: current_user.bio
+  end
+
   def create
     @bio = current_user.create_bio(bio_params)
     if @bio.save

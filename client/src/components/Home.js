@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import { Header, Form, Label, TextArea, Button, Segment } from 'semantic-ui-react';
+import { Link } from 'react-router-dom'
 import axios from 'axios';
 
 
 class Home extends Component {
 
-  state = { bio: { profile_img: '', description: ''} };
+  state = { bio: { profile_image: '', description: ''} };
 
   handleImgChange = (e) => {
-    this.setState({ bio: { profile_img: e.target.value, description: this.state.bio.description } })
+    this.setState({ bio: { profile_image: e.target.value, description: this.state.bio.description } })
   }
   handleDescChange = (e) => {
-    this.setState( { bio: { profile_img: this.state.bio.profile_img,
+    this.setState( { bio: { profile_image: this.state.bio.profile_image,
                             description: e.target.value} })
   }
-
   handleSubmit = (e) => {
     e.preventDefault()
     axios.post('/api/bios', {bio: this.state.bio})
@@ -25,7 +25,6 @@ class Home extends Component {
         console.log(err)
       })
   }
-
   render() {
     return (
 
@@ -33,10 +32,13 @@ class Home extends Component {
         <Header as='h1'>Create Your Bio</Header>
         <Form onSubmit={this.handleSubmit}>
           <Label>Profile Image</Label>
-          <Form.Input placeholder="URL goes here" id="profile_img" onChange={this.handleImgChange} />
+          <Form.Input placeholder="URL goes here" id="profile_image" onChange={this.handleImgChange} />
           <Label>Description</Label>
           <TextArea placeholder="Description Goes Here" id="description" onChange={this.handleDescChange} />
           <Button secondary type='submit'>Add Bio</Button>
+          <Link to={'/bio'}>
+          <Button secondary>Go To Page</Button>
+          </Link>
         </Form>
 
       </Segment>
